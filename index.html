@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dust 2 Engineering — Ontario Code Tools Hub</title>
+<meta name="description" content="All free Ontario building-code tools by Dust 2 Engineering Inc. in one place: calculators, checkers and permit checklists for OBC, CEC and CSA B149.1 design.">
+<style>
+:root{color-scheme:dark}
+body{background:#0e1116;color:#e6e9ee;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;margin:0;padding:24px;line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto}
+h1{font-size:1.7rem;margin:.2em 0 .1em}
+h2{font-size:1.2rem;margin-top:1.8em;color:#ffd479;border-bottom:1px solid #2b333f;padding-bottom:.3em}
+.sub{color:#9fb0c3;margin:.2em 0 1em}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.card{background:#161b22;border:1px solid #2b333f;border-radius:12px;padding:16px}
+.card h3{margin:.1em 0 .4em;font-size:1.02rem;line-height:1.35}
+.card p{color:#c8d3e0;font-size:.93rem;margin:.2em 0 .8em}
+.links{display:flex;gap:14px;align-items:center}
+a.open{background:#f0a832;color:#14100a;font-weight:600;text-decoration:none;border-radius:8px;padding:8px 14px;font-size:.93rem}
+a.gh{color:#7cc4ff;font-size:.9rem}
+#q{width:100%;box-sizing:border-box;background:#0e1116;color:#e6e9ee;border:1px solid #39424f;border-radius:8px;padding:11px;font-size:1rem;margin:.6em 0 .2em}
+.small{color:#9fb0c3;font-size:.88rem}
+.count{color:#ffd479;font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Dust 2 Engineering — 安省规范工具总入口</h1>
+<p class="sub">全部免费工具都在这一页：点「打开工具」直接进入在线版使用。共 <span class="count">37</span> 个工具，覆盖 OBC（安省建筑规范）、CEC（电气规范）、CSA B149.1（燃气）。每个工具的 GitHub 仓库里还有命令行版和机器可读的规范数据表（JSON）。</p>
+<input id="q" type="text" placeholder="搜索工具…（如 hood、燃气、雪、washroom）" oninput="filterTools()">
+<p class="small" id="shown"></p>
+<h2>消防与生命安全 Fire & Life Safety</h2>
+<div class="grid">
+<div class="card" data-name="exit capacity calculator ontario-exit-capacity-calculator">
+<h3>Exit Capacity Calculator</h3>
+<p>出口宽度够不够、能不能只开一个出口、最远行程距离（OBC 3.4）</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-exit-capacity-calculator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-exit-capacity-calculator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="spatial separation calculator ontario-spatial-separation-calculator">
+<h3>Spatial Separation Calculator</h3>
+<p>外墙能开多大的窗：开口面积 vs 与地界的距离（OBC 3.2.3.1）</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-spatial-separation-calculator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-spatial-separation-calculator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="occupant load calculator ontario-occupant-load-calculator">
+<h3>Occupant Load Calculator</h3>
+<p>按用途算人员荷载：这间店最多能坐多少人（OBC 3.1.17.1）</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-occupant-load-calculator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-occupant-load-calculator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="washroom fixture calculator ontario-washroom-fixture-calculator">
+<h3>Washroom Fixture Calculator</h3>
+<p>卫生间要几个马桶才够（OBC 3.7.4）</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-washroom-fixture-calculator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-washroom-fixture-calculator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="fire separation calculator ontario-fire-separation-calculator">
+<h3>Fire Separation Calculator</h3>
+<p>两种用途挨着，中间的墙要几小时耐火（OBC 表 3.1.3.1）</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-fire-separation-calculator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-fire-separation-calculator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="fire alarm & emergency lighting checker ontario-fire-alarm-emergency-lighting-checker">
+<h3>Fire Alarm & Emergency Lighting Checker</h3>
+<p>这栋楼要不要装火警系统、应急灯要多亮、备电撑多久</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-fire-alarm-emergency-lighting-checker/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-fire-alarm-emergency-lighting-checker">GitHub 仓库</a></div>
+</div>
+</div>
+<h2>暖通 HVAC / Mechanical</h2>
+<div class="grid">
+<div class="card" data-name="restaurant kitchen layout designer ontario-restaurant-kitchen-layout-designer">
+<h3>Restaurant Kitchen Layout Designer</h3>
+<p>旗舰：拖拽拼厨房布局，自动算 hood 尺寸和设备总价</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-restaurant-kitchen-layout-designer/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-restaurant-kitchen-layout-designer">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="duct sizer calculator ontario-duct-sizer-calculator">
+<h3>Duct Sizer Calculator</h3>
+<p>给风量和风速，算圆风管/方风管尺寸</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-duct-sizer-calculator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-duct-sizer-calculator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="ventilation outdoor air calculator ontario-ventilation-outdoor-air-calculator">
+<h3>Ventilation Outdoor Air Calculator</h3>
+<p>按 ASHRAE 62.1 算要送多少新风</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-ventilation-outdoor-air-calculator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-ventilation-outdoor-air-calculator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="make-up air heating calculator ontario-makeup-air-heating-calculator">
+<h3>Make-Up Air Heating Calculator</h3>
+<p>补风机要多大的加热量（按安省冬季设计温度）</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-makeup-air-heating-calculator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-makeup-air-heating-calculator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="gas pipe sizing calculator ontario-gas-pipe-sizing-calculator">
+<h3>Gas Pipe Sizing Calculator</h3>
+<p>燃气管径：总负荷 + 最远距离 → 管子要多粗</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-gas-pipe-sizing-calculator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-gas-pipe-sizing-calculator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="combustion air calculator ontario-combustion-air-calculator">
+<h3>Combustion Air Calculator</h3>
+<p>燃气设备燃烧空气口要开多大（CSA B149.1）</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-combustion-air-calculator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-combustion-air-calculator">GitHub 仓库</a></div>
+</div>
+</div>
+<h2>给排水 Plumbing</h2>
+<div class="grid">
+<div class="card" data-name="sanitary drainage sizing calculator ontario-sanitary-drainage-sizing-calculator">
+<h3>Sanitary Drainage Sizing Calculator</h3>
+<p>卫生排水：洁具当量 → 支管/立管/出户管管径（OBC Part 7）</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-sanitary-drainage-sizing-calculator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-sanitary-drainage-sizing-calculator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="storm drainage sizing calculator ontario-storm-drainage-sizing-calculator">
+<h3>Storm Drainage Sizing Calculator</h3>
+<p>雨水排水：屋面面积 × 降雨量 → 雨水管管径</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-storm-drainage-sizing-calculator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-storm-drainage-sizing-calculator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="water service sizing calculator ontario-water-service-sizing-calculator">
+<h3>Water Service Sizing Calculator</h3>
+<p>给水：洁具当量 + 水压 + 长度 → 进户管和配水管管径</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-water-service-sizing-calculator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-water-service-sizing-calculator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="grease interceptor sizing calculator ontario-grease-interceptor-sizing-calculator">
+<h3>Grease Interceptor Sizing Calculator</h3>
+<p>隔油器要选多大流量（OBC 7.4.4.3 公式）</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-grease-interceptor-sizing-calculator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-grease-interceptor-sizing-calculator">GitHub 仓库</a></div>
+</div>
+</div>
+<h2>电气 Electrical</h2>
+<div class="grid">
+<div class="card" data-name="electrical service load estimator ontario-electrical-service-load-estimator">
+<h3>Electrical Service Load Estimator</h3>
+<p>小商业整店电容量估算：大概要 200A 还是 400A</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-electrical-service-load-estimator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-electrical-service-load-estimator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="voltage drop calculator ontario-voltage-drop-calculator">
+<h3>Voltage Drop Calculator</h3>
+<p>电线太长电压降多少，查 CEC 3%/5% 红线</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-voltage-drop-calculator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-voltage-drop-calculator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="conduit fill calculator ontario-conduit-fill-calculator">
+<h3>Conduit Fill Calculator</h3>
+<p>一根线管最多能穿几根线（CEC 填充率）</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-conduit-fill-calculator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-conduit-fill-calculator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="dwelling unit load calculator ontario-dwelling-unit-load-calculator">
+<h3>Dwelling Unit Load Calculator</h3>
+<p>住宅入户电量：CEC 8-200 完整计算表</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-dwelling-unit-load-calculator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-dwelling-unit-load-calculator">GitHub 仓库</a></div>
+</div>
+</div>
+<h2>结构 Structural</h2>
+<div class="grid">
+<div class="card" data-name="snow load calculator ontario-snow-load-calculator">
+<h3>Snow Load Calculator</h3>
+<p>各市雪荷载（SB-1），Part 9 和 Part 4 简化算法</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-snow-load-calculator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-snow-load-calculator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="wind load calculator ontario-wind-load-calculator">
+<h3>Wind Load Calculator</h3>
+<p>各市风压 q 值（SB-1）+ 简化风压计算</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-wind-load-calculator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-wind-load-calculator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="guard requirements checker ontario-guard-requirements-checker">
+<h3>Guard Requirements Checker</h3>
+<p>栏杆要不要装、要多高、孔洞和防攀爬规则</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-guard-requirements-checker/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-guard-requirements-checker">GitHub 仓库</a></div>
+</div>
+</div>
+<h2>无障碍 Accessibility</h2>
+<div class="grid">
+<div class="card" data-name="barrier-free ramp calculator ontario-barrier-free-ramp-calculator">
+<h3>Barrier-Free Ramp Calculator</h3>
+<p>无障碍坡道：1:12 坡度、跑长和平台（OBC 3.8.3.4）</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-barrier-free-ramp-calculator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-barrier-free-ramp-calculator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="barrier-free washroom checker ontario-barrier-free-washroom-checker">
+<h3>Barrier-Free Washroom Checker</h3>
+<p>无障碍卫生间逐项尺寸检查（2024 新版数值）</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-barrier-free-washroom-checker/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-barrier-free-washroom-checker">GitHub 仓库</a></div>
+</div>
+</div>
+<h2>建筑通用 Building General</h2>
+<div class="grid">
+<div class="card" data-name="stair geometry calculator ontario-stair-geometry-calculator">
+<h3>Stair Geometry Calculator</h3>
+<p>楼梯步高步宽和总跑长（Part 3 出口楼梯）</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-stair-geometry-calculator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-stair-geometry-calculator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="mezzanine storey checker ontario-mezzanine-storey-checker">
+<h3>Mezzanine Storey Checker</h3>
+<p>夹层算不算一层楼：安省 40%/10% 判定（OBC 3.2.1.1）</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-mezzanine-storey-checker/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-mezzanine-storey-checker">GitHub 仓库</a></div>
+</div>
+</div>
+<h2>许可证清单 Permit Checklists（按业态）</h2>
+<div class="grid">
+<div class="card" data-name="restaurant permit checklist ontario-restaurant-permit-checklist-generator">
+<h3>Restaurant Permit Checklist</h3>
+<p>餐馆开业许可证清单</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-restaurant-permit-checklist-generator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-restaurant-permit-checklist-generator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="salon permit checklist ontario-salon-permit-checklist-generator">
+<h3>Salon Permit Checklist</h3>
+<p>美发/美容沙龙许可证清单</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-salon-permit-checklist-generator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-salon-permit-checklist-generator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="bakery permit checklist ontario-bakery-permit-checklist-generator">
+<h3>Bakery Permit Checklist</h3>
+<p>烘焙店许可证清单</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-bakery-permit-checklist-generator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-bakery-permit-checklist-generator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="retail store permit checklist ontario-retail-store-permit-checklist-generator">
+<h3>Retail Store Permit Checklist</h3>
+<p>零售店许可证清单</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-retail-store-permit-checklist-generator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-retail-store-permit-checklist-generator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="office renovation permit checklist ontario-office-renovation-permit-checklist-generator">
+<h3>Office Renovation Permit Checklist</h3>
+<p>办公室装修许可证清单</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-office-renovation-permit-checklist-generator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-office-renovation-permit-checklist-generator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="change of use permit checklist ontario-change-of-use-permit-checklist-generator">
+<h3>Change of Use Permit Checklist</h3>
+<p>变更用途许可证清单</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-change-of-use-permit-checklist-generator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-change-of-use-permit-checklist-generator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="gym / fitness studio permit checklist ontario-gym-fitness-studio-permit-checklist-generator">
+<h3>Gym / Fitness Studio Permit Checklist</h3>
+<p>健身房许可证清单</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-gym-fitness-studio-permit-checklist-generator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-gym-fitness-studio-permit-checklist-generator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="daycare / child care permit checklist ontario-daycare-child-care-permit-checklist-generator">
+<h3>Daycare / Child Care Permit Checklist</h3>
+<p>托儿所许可证清单</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-daycare-child-care-permit-checklist-generator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-daycare-child-care-permit-checklist-generator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="medical / dental clinic permit checklist ontario-medical-dental-clinic-permit-checklist-generator">
+<h3>Medical / Dental Clinic Permit Checklist</h3>
+<p>医科/牙科诊所许可证清单</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-medical-dental-clinic-permit-checklist-generator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-medical-dental-clinic-permit-checklist-generator">GitHub 仓库</a></div>
+</div>
+<div class="card" data-name="auto repair shop permit checklist ontario-auto-repair-shop-permit-checklist-generator">
+<h3>Auto Repair Shop Permit Checklist</h3>
+<p>修车行许可证清单</p>
+<div class="links"><a class="open" href="https://dust2engineering.github.io/ontario-auto-repair-shop-permit-checklist-generator/web/">打开工具 →</a><a class="gh" href="https://github.com/dust2engineering/ontario-auto-repair-shop-permit-checklist-generator">GitHub 仓库</a></div>
+</div>
+</div>
+<p class="small" style="margin-top:2em">Dust 2 Engineering Inc., Mississauga, Ontario — GTA 餐馆及小型商业许可图纸，Ontario P.Eng. 盖章，一口价 $3,500–$5,000。本页随新工具上线持续更新。</p>
+</div>
+<script>
+function filterTools(){
+  const q=document.getElementById('q').value.trim().toLowerCase();
+  let shown=0;
+  document.querySelectorAll('.card').forEach(c=>{
+    const hit=!q || c.textContent.toLowerCase().includes(q) || c.dataset.name.includes(q);
+    c.style.display=hit?'':'none'; if(hit) shown++;
+  });
+  document.querySelectorAll('h2').forEach(h=>{
+    const grid=h.nextElementSibling;
+    const any=[...grid.children].some(c=>c.style.display!=='none');
+    h.style.display=any?'':'none'; grid.style.display=any?'':'none';
+  });
+  document.getElementById('shown').textContent=q?('显示 '+shown+' 个工具'):'';
+}
+</script>
+</body>
+</html>
