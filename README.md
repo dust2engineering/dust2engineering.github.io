@@ -1,6 +1,6 @@
 # Dust 2 Engineering — Tools Hub
 
-The single entry page for all 37 free Ontario building-code tools published by
+The single entry page for all 50 free Ontario building-code tools published by
 **Dust 2 Engineering Inc.**: **https://dust2engineering.github.io/**
 
 Every tool is listed by category with a one-line description and a direct link into its
